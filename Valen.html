@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Valen ❤️</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    overflow: hidden;
+    background: #f8e7c0;
+}
+
+
+/* =========================
+   PRIMERA PANTALLA - CARTA
+   ========================= */
+
+#inicio {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #ffe9a8, #fff4d6);
+
+    transition: opacity 1s ease;
+}
+
+
+.carta {
+    width: 320px;
+    height: 220px;
+
+    background: #fffdf5;
+
+    border: 2px solid #d6b36a;
+    border-radius: 8px;
+
+    position: relative;
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.18);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: flotar 2.5s ease-in-out infinite;
+}
+
+
+/* Triángulo de la carta */
+
+.carta::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 158px solid transparent;
+    border-right: 158px solid transparent;
+    border-top: 105px solid #f1d48e;
+
+    z-index: 1;
+}
+
+
+.nombre {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 30px;
+
+    font-size: 40px;
+
+    color: #76511d;
+
+    font-weight: bold;
+
+    text-shadow:
+        1px 1px 2px #d8c08a;
+}
+
+
+.texto-click {
+    position: absolute;
+
+    bottom: 18px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    color: #92733b;
+
+    z-index: 3;
+}
+
+
+@keyframes flotar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* =========================
+   SEGUNDA PANTALLA
+   ========================= */
+
+#flores {
+    display: none;
+
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: linear-gradient(
+        to bottom,
+        #78c9f5 0%,
+        #cceeff 60%,
+        #8bd35f 60%,
+        #4d9e38 100%
+    );
+}
+
+
+.contenido {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding-top: 45px;
+    padding-bottom: 230px;
+
+    z-index: 10;
+}
+
+
+/* =========================
+   MENSAJE
+   ========================= */
+
+.mensaje {
+    width: 90%;
+    max-width: 750px;
+
+    margin: auto;
+
+    padding: 25px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background: rgba(90, 60, 20, 0.20);
+
+    border-radius: 20px;
+
+    text-shadow:
+        2px 2px 4px rgba(0,0,0,0.5);
+
+    animation: aparecer 2s ease;
+}
+
+
+.titulo {
+    font-size: 34px;
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+
+.poema {
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    white-space: pre-line;
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   CAMPO DE FLORES
+   ========================= */
+
+.campo {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 230px;
+
+    z-index: 5;
+}
+
+
+.flor {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 90px;
+    height: 180px;
+
+    transform-origin: bottom center;
+
+    animation:
+        crecer 2s ease-out forwards;
+}
+
+
+.tallo {
+    position: absolute;
+
+    bottom: 0;
+    left: 44px;
+
+    width: 7px;
+    height: 130px;
+
+    background: #397d2e;
+
+    border-radius: 10px;
+}
+
+
+.hoja {
+    position: absolute;
+
+    width: 45px;
+    height: 20px;
+
+    background: #4e9637;
+
+    border-radius:
+        100% 0 100% 0;
+}
+
+
+.hoja1 {
+    bottom: 60px;
+    left: 5px;
+
+    transform: rotate(25deg);
+}
+
+
+.hoja2 {
+    bottom: 85px;
+    left: 40px;
+
+    transform: rotate(-25deg);
+}
+
+
+/* =========================
+   GIRASOL
+   ========================= */
+
+.centro {
+    position: absolute;
+
+    top: 0;
+    left: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    background: #7b4815;
+
+    border-radius: 50%;
+
+    z-index: 3;
+}
+
+
+.petalo {
+    position: absolute;
+
+    width: 34px;
+    height: 55px;
+
+    background: #ffd52f;
+
+    border-radius: 50%;
+
+    left: 31px;
+    top: -10px;
+
+    transform-origin:
+        14px 32px;
+}
+
+
+.p1 {
+    transform:
+        rotate(0deg)
+        translateY(-28px);
+}
+
+.p2 {
+    transform:
+        rotate(45deg)
+        translateY(-28px);
+}
+
+.p3 {
+    transform:
+        rotate(90deg)
+        translateY(-28px);
+}
+
+.p4 {
+    transform:
+        rotate(135deg)
+        translateY(-28px);
+}
+
+.p5 {
+    transform:
+        rotate(180deg)
+        translateY(-28px);
+}
+
+.p6 {
+    transform:
+        rotate(225deg)
+        translateY(-28px);
+}
+
+.p7 {
+    transform:
+        rotate(270deg)
+        translateY(-28px);
+}
+
+.p8 {
+    transform:
+        rotate(315deg)
+        translateY(-28px);
+}
+
+
+/* =========================
+   ANIMACIÓN FLORES
+   ========================= */
+
+@keyframes crecer {
+
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   POSICIÓN DE FLORES
+   ========================= */
+
+.f1 {
+    left: 5%;
+    animation-delay: 0.2s;
+}
+
+.f2 {
+    left: 25%;
+    transform: scale(0.8);
+    animation-delay: 0.5s;
+}
+
+.f3 {
+    left: 46%;
+    animation-delay: 0.8s;
+}
+
+.f4 {
+    left: 67%;
+    transform: scale(0.85);
+    animation-delay: 1.1s;
+}
+
+.f5 {
+    left: 85%;
+    transform: scale(0.7);
+    animation-delay: 1.4s;
+}
+
+
+/* =========================
+   PÉTALOS CAYENDO
+   ========================= */
+
+.petalo-caida {
+    position: absolute;
+
+    top: -30px;
+
+    width: 12px;
+    height: 18px;
+
+    background: #ffd52f;
+
+    border-radius: 50%;
+
+    animation:
+        caer linear infinite;
+
+    z-index: 3;
+}
+
+
+@keyframes caer {
+
+    0% {
+        transform:
+            translateY(-50px)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+.pc1 {
+    left: 10%;
+    animation-duration: 6s;
+}
+
+.pc2 {
+    left: 25%;
+    animation-duration: 8s;
+    animation-delay: 2s;
+}
+
+.pc3 {
+    left: 45%;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.pc4 {
+    left: 65%;
+    animation-duration: 9s;
+    animation-delay: 3s;
+}
+
+.pc5 {
+    left: 80%;
+    animation-duration: 6s;
+    animation-delay: 1.5s;
+}
+
+.pc6 {
+    left: 92%;
+    animation-duration: 8s;
+    animation-delay: 4s;
+}
+
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .carta {
+        width: 290px;
+        height: 200px;
+    }
+
+    .carta::before {
+        border-left-width: 143px;
+        border-right-width: 143px;
+    }
+
+    .nombre {
+        font-size: 35px;
+    }
+
+    .titulo {
+        font-size: 27px;
+    }
+
+    .poema {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    .mensaje {
+        width: 92%;
+        padding: 20px 15px;
+    }
+
+    .flor {
+        transform: scale(0.75);
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PRIMERA PANTALLA
+     ===================================================== -->
+
+<div id="inicio">
+
+    <div
+        class="carta"
+        onclick="abrirCarta()"
+    >
+
+        <div class="nombre">
+            Valen ❤️
+        </div>
+
+        <div class="texto-click">
+            Tocá la carta para abrirla
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SEGUNDA PANTALLA
+     ===================================================== -->
+
+<div id="flores">
+
+    <!-- PÉTALOS QUE CAEN -->
+
+    <div class="petalo-caida pc1"></div>
+    <div class="petalo-caida pc2"></div>
+    <div class="petalo-caida pc3"></div>
+    <div class="petalo-caida pc4"></div>
+    <div class="petalo-caida pc5"></div>
+    <div class="petalo-caida pc6"></div>
+
+
+    <div class="contenido">
+
+        <div class="mensaje">
+
+            <div class="titulo">
+                Para Valen ❤️
+            </div>
+
+            <div class="poema">
+
+Sos tan hermosa que, sin decir nada,
+conmovés y ablandás mi alma;
+hay algo en vos que me desarma
+y hace que todo lo demás pierda importancia.
+
+Tus ojos tienen algo inexplicable,
+me gobiernan y no me dejan escapar;
+me enternecen, me atrapan,
+y sinceramente, no me quiero liberar.
+
+Y si tus besos son ese infierno
+que solo vos sabés gobernar,
+que me consuma tu fuego,
+porque no tendría intención de escapar.
+
+Tu voz, tan dulce y angelical,
+me hace flotar y volver a sonreír,
+como un pequeño instante de cielo
+en medio de mi gris existir.
+
+Sé que quizá ya no quieras hablarme
+ni quieras saber nada de mí,
+pero me tomé el atrevimiento
+de escribirte estas palabras,
+solo porque todavía hay algo en vos
+que me inspira a hacerlo así.
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         CAMPO DE GIRASOLES
+         ================================================= -->
+
+    <div class="campo">
+
+
+        <!-- FLOR 1 -->
+
+        <div class="flor f1">
+
+            <div class="tallo"></div>
+
+            <div class="hoja hoja1"></div>
+            <div class="hoja hoja2"></div>
+
+            <div class="petalo p1"></div>
+            <div class="petalo p2"></div>
+            <div class="petalo p3"></div>
+            <div class="petalo p4"></div>
+            <div class="petalo p5"></div>
+            <div class="petalo p6"></div>
+            <div class="petalo p7"></div>
+            <div class="petalo p8"></div>
+
+            <div class="centro"></div>
+
+        </div>
+
+
+        <!-- FLOR 2 -->
+
+        <div class="flor f2">
+
+            <div class="tallo"></div>
+
+            <div class="hoja hoja1"></div>
+            <div class="hoja hoja2"></div>
+
+            <div class="petalo p1"></div>
+            <div class="petalo p2"></div>
+            <div class="petalo p3"></div>
+            <div class="petalo p4"></div>
+            <div class="petalo p5"></div>
+            <div class="petalo p6"></div>
+            <div class="petalo p7"></div>
+            <div class="petalo p8"></div>
+
+            <div class="centro"></div>
+
+        </div>
+
+
+        <!-- FLOR 3 -->
+
+        <div class="flor f3">
+
+            <div class="tallo"></div>
+
+            <div class="hoja hoja1"></div>
+            <div class="hoja hoja2"></div>
+
+            <div class="petalo p1"></div>
+            <div class="petalo p2"></div>
+            <div class="petalo p3"></div>
+            <div class="petalo p4"></div>
+            <div class="petalo p5"></div>
+            <div class="petalo p6"></div>
+            <div class="petalo p7"></div>
+            <div class="petalo p8"></div>
+
+            <div class="centro"></div>
+
+        </div>
+
+
+        <!-- FLOR 4 -->
+
+        <div class="flor f4">
+
+            <div class="tallo"></div>
+
+            <div class="hoja hoja1"></div>
+            <div class="hoja hoja2"></div>
+
+            <div class="petalo p1"></div>
+            <div class="petalo p2"></div>
+            <div class="petalo p3"></div>
+            <div class="petalo p4"></div>
+            <div class="petalo p5"></div>
+            <div class="petalo p6"></div>
+            <div class="petalo p7"></div>
+            <div class="petalo p8"></div>
+
+            <div class="centro"></div>
+
+        </div>
+
+
+        <!-- FLOR 5 -->
+
+        <div class="flor f5">
+
+            <div class="tallo"></div>
+
+            <div class="hoja hoja1"></div>
+            <div class="hoja hoja2"></div>
+
+            <div class="petalo p1"></div>
+            <div class="petalo p2"></div>
+            <div class="petalo p3"></div>
+            <div class="petalo p4"></div>
+            <div class="petalo p5"></div>
+            <div class="petalo p6"></div>
+            <div class="petalo p7"></div>
+            <div class="petalo p8"></div>
+
+            <div class="centro"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+function abrirCarta() {
+
+    const inicio =
+        document.getElementById("inicio");
+
+    const flores =
+        document.getElementById("flores");
+
+    inicio.style.opacity = "0";
+
+    setTimeout(function() {
+
+        inicio.style.display = "none";
+
+        flores.style.display = "block";
+
+    }, 1000);
+
+}
+
+</script>
+
+</body>
+</html>
